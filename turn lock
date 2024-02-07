@@ -65,6 +65,8 @@ pcall(function()
 					wait()
 					if currentPlr == nil then return end
 					lookAt(currentPlr.HumanoidRootPart.Position)
+camera.CameraType = Enum.CameraType.Attach
+
 					plr.Character.HumanoidRootPart.CFrame = CFrame.lookAt(plr.Character.HumanoidRootPart.CFrame.Position, Vector3.new(currentPlr.HumanoidRootPart.CFrame.Position.X, plr.Character.HumanoidRootPart.CFrame.Position.Y, currentPlr.HumanoidRootPart.CFrame.Position.Z))
 					if lockedOn == false then
 						break
