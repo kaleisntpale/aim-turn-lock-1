@@ -65,9 +65,9 @@ pcall(function()
 					wait()
 					if currentPlr == nil then return end
 					lookAt(currentPlr.HumanoidRootPart.Position)
-local camera = workspace.CurrentCamera --if you already have a variable for camera, dont include
+					local camera = workspace.CurrentCamera --if you already have a variable for camera, dont include
 
-camera.CameraType = Enum.CameraType.Attach
+					camera.CameraType = Enum.CameraType.Orbital
 
 
 					plr.Character.HumanoidRootPart.CFrame = CFrame.lookAt(plr.Character.HumanoidRootPart.CFrame.Position, Vector3.new(currentPlr.HumanoidRootPart.CFrame.Position.X, plr.Character.HumanoidRootPart.CFrame.Position.Y, currentPlr.HumanoidRootPart.CFrame.Position.Z))
