@@ -67,32 +67,44 @@ pcall(function()
 					lookAt(currentPlr.HumanoidRootPart.Position)
 					local camera = workspace.CurrentCamera --if you already have a variable for camera, dont include
 
-					camera.CameraType = Enum.CameraType.Watch
+					camera.CameraType = Enum.CameraType.Attach
 
 
 					plr.Character.HumanoidRootPart.CFrame = CFrame.lookAt(plr.Character.HumanoidRootPart.CFrame.Position, Vector3.new(currentPlr.HumanoidRootPart.CFrame.Position.X, plr.Character.HumanoidRootPart.CFrame.Position.Y, currentPlr.HumanoidRootPart.CFrame.Position.Z))
 					if lockedOn == false then
+						camera.CameraType = Enum.CameraType.Custom
+
 						break
 					end
 					if currentPlr == nil then
 						lockedOn = false
 						print('Locked off because plr nil')
+						camera.CameraType = Enum.CameraType.Custom
+
 						break
 					elseif currentPlr:FindFirstChild("HumanoidRootPart") == nil then
 						print('Locked off because HumanoidRootPart nil')
 						lockedOn = false
+						camera.CameraType = Enum.CameraType.Custom
+
 						break
 					elseif currentPlr:FindFirstChild("Humanoid") == nil then
 						print('Locked off because Humanoid nil')
 						lockedOn = false
+						camera.CameraType = Enum.CameraType.Custom
+
 						break
 					elseif currentPlr.Humanoid.Health <= 0 then
 						print('Locked off because enemy plr died')
 						lockedOn = false
+						camera.CameraType = Enum.CameraType.Custom
+
 						break
 					elseif chr.Humanoid.Health <= 0 then
 						print('Locked off because your plr died!')
 						lockedOn = false
+						camera.CameraType = Enum.CameraType.Custom
+
 						break
 					end
 				end
